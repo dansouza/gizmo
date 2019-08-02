@@ -15,10 +15,10 @@ var (
 
 // Device encapsulates a hardware device
 type Device interface {
-	VendorID() uint16
-	ProductID() uint16
-	Version() uint16
-	Name() string
+	GetVendorID() uint16
+	GetProductID() uint16
+	GetVersionID() uint16
+	GetName() string
 	Parse(io.Reader, io.Writer) (int, error)
 }
 
@@ -41,7 +41,7 @@ func hash(vendorID, productID, version uint16) string {
 }
 
 func hashDevice(device Device) string {
-	return hash(device.VendorID(), device.ProductID(), device.Version())
+	return hash(device.GetVendorID(), device.GetProductID(), device.GetVersionID())
 }
 
 func (r *registry) Register(device Device) error {

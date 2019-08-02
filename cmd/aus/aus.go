@@ -13,10 +13,10 @@ func main() {
 	fmt.Printf("recognized devices:\n")
 	registry.DeviceRegistry.Enumerate(func(device registry.Device) bool {
 		fmt.Printf("[>] vendor=%04X\tproductID=%04X\tversion=%04X\t%s\n",
-			device.VendorID(),
-			device.ProductID(),
-			device.Version(),
-			device.Name())
+			device.GetVendorID(),
+			device.GetProductID(),
+			device.GetVersionID(),
+			device.GetName())
 		return true
 	})
 
@@ -26,7 +26,7 @@ func main() {
 		os.Exit(-1)
 	}
 
-	fmt.Printf("[*] found preferred lightsaber: %s\n", doubleEndedLightSaber.Name())
+	fmt.Printf("[*] found preferred lightsaber: %s\n", doubleEndedLightSaber.GetName())
 	fmt.Printf("[*] reading from device...\n")
 
 	input, err := os.Open("/proc/version")
