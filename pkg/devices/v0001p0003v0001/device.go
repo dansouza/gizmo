@@ -5,7 +5,7 @@ import (
 	"io"
 	"io/ioutil"
 
-	"github.com/dansouza/gizmo/pkg/devices/device"
+	"github.com/dansouza/gizmo/pkg/device"
 )
 
 // DeviceHandler is a wrapper around device.Device to allow adding a custom

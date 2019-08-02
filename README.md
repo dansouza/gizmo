@@ -9,9 +9,9 @@
 │       └── aus.go
 ├── LICENSE
 ├── pkg
+│   ├── device
+│   │   └── device.go
 │   ├── devices
-│   │   ├── device
-│   │   │   └── device.go
 │   │   ├── devices.go
 │   │   ├── v0001p0001v0001
 │   │   │   └── device.go
